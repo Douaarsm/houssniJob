@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_41laN91nNqyD5fMTFzuJNgZPdV5H",
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "s-maxage=1, stale-while-revalidate" }
+      ]
+    }
+  ]
+} 
