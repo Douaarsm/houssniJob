@@ -1,0 +1,52 @@
+.stats-card {
+  --g: 4px;     /* the gap */
+  --b: 12px;    /* border thickness*/
+  --c: #669706; /* the color */
+  
+  position: relative;
+  padding: calc(var(--g) + var(--b));
+  --_c: #0000 0 25%, var(--c) 0 50%;
+  --_g1: repeating-linear-gradient(90deg ,var(--_c)) repeat-x;
+  --_g2: repeating-linear-gradient(180deg,var(--_c)) repeat-y;
+  background:
+    var(--_g1) var(--_p, 25%) 0   ,var(--_g2) 0    var(--_p,125%),
+    var(--_g1) var(--_p,125%) 100%,var(--_g2) 100% var(--_p, 25%);
+  background-size: 200% var(--b),var(--b) 200%;
+  cursor: pointer;
+  transition: .3s;
+  border-radius: 15px;
+  background-color: white;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  inset: var(--b);
+  background: white;
+  border-radius: 10px;
+}
+
+.stats-card:hover {
+  --_p: 75%;
+}
+
+.stats-number {
+  position: relative;
+  font-size: 2.5rem;
+  color: #669706;
+  font-weight: 700;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+.stats-label {
+  position: relative;
+  font-size: 1.1rem;
+  color: #444;
+  z-index: 1;
+} 
